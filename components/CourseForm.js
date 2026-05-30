@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { readResponseBody } from "@/lib/readResponseBody";
 import {
   DndContext,
   closestCenter,
@@ -90,13 +89,8 @@ const CourseForm = ({ courseCode }) => {
             method: "POST",
             body: JSON.stringify({ courseCode }),
           });
-<<<<<<< HEAD
-          const data = await readResponseBody(response);
-          if (!response.ok) throw new Error(data.error || "Failed to fetch course");
-=======
           if (!response.ok) throw new Error("Failed to fetch course");
           const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
           setCourse(data.props.Course);
         } catch (error) {
           console.error("Error loading course:", error);
@@ -162,11 +156,7 @@ const CourseForm = ({ courseCode }) => {
           body: JSON.stringify({ courseCode: code }),
         });
 
-<<<<<<< HEAD
-        const data = await readResponseBody(response);
-=======
         const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
         const existingCourse = data?.props?.Course || null;
 
         if (cancelled) {
@@ -362,11 +352,7 @@ const CourseForm = ({ courseCode }) => {
       }),
     });
 
-<<<<<<< HEAD
-    const data = await readResponseBody(response);
-=======
     const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
     if (!response.ok) {
       throw new Error(data.error || "Failed to rename PDF");
@@ -433,11 +419,7 @@ const CourseForm = ({ courseCode }) => {
       }),
     });
 
-<<<<<<< HEAD
-    const data = await readResponseBody(response);
-=======
     const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
     if (!response.ok) {
       throw new Error(data.error || "Failed to rename PDF");
@@ -500,11 +482,7 @@ const CourseForm = ({ courseCode }) => {
       }),
     });
 
-<<<<<<< HEAD
-    const data = await readResponseBody(response);
-=======
     const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
     if (!response.ok) {
       throw new Error(data.error || "Failed to rename PDF");
@@ -551,11 +529,7 @@ const CourseForm = ({ courseCode }) => {
       body: payload,
     });
 
-<<<<<<< HEAD
-    const data = await readResponseBody(response);
-=======
     const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
     if (!response.ok) {
       throw new Error(data.error || "Failed to upload file");
@@ -775,11 +749,7 @@ const CourseForm = ({ courseCode }) => {
         body: JSON.stringify(course),
       });
 
-<<<<<<< HEAD
-      const data = await readResponseBody(response);
-=======
       const data = await response.json();
->>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
       if (!response.ok) {
         throw new Error(data.error || "Failed to save course");
