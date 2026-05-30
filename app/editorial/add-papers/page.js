@@ -58,7 +58,11 @@ export default function PaperForm({ onSubmit, initialData = {} }) {
       body: payload,
     });
 
+<<<<<<< HEAD
     const data = await readResponseBody(response);
+=======
+    const data = await response.json();
+>>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
     if (!response.ok) {
       throw new Error(data.error || "Failed to upload file");
@@ -187,7 +191,11 @@ export default function PaperForm({ onSubmit, initialData = {} }) {
         }),
       });
 
+<<<<<<< HEAD
       const data = await readResponseBody(response);
+=======
+      const data = await response.json();
+>>>>>>> 5c09a4f9c17bb1d8f42f2d020613318c63b34995
 
       if (!response.ok) {
         throw new Error(data.error || "Failed to save paper");
